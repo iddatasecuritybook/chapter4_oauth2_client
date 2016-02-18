@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  h1 OAuth Client
+  a(href="#{options.url}?redirect_uri=#{options.redirect_uri}&user_id=#{options.user_id}&client_id=#{options.client_id}&response_type=#{options.response_type}&state=#{options.state}&scope=#{options.scope}")
+    button Authorize
+  

@@ -22,11 +22,19 @@ router.get('/', function(req, res) {
     response_type: 'code'
   };
 
+  var authorizationURL = options.url +
+    '?redirect_uri=' + options.redirect_uri +
+    '&user_id=' + options.user_id +
+    '&client_id=' + options.client_id +
+    '&response_type=' + options.response_type +
+    '&state=' + options.state;
+
   res.render('index', {
-    options: options
+    authorizationURL: authorizationURL
   });
 });
 
+/* GET the redirect's callback */
 router.get('/callback', function(req, res, next) {
   var state = req.query.state;
   var code = req.query.code;

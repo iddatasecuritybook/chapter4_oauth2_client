@@ -19,7 +19,8 @@ router.get('/', function(req, res) {
     redirect_uri: REDIRECT_SERVER_URL + '/callback',
     client_id: CLIENT_ID,
     state: state,
-    response_type: 'code'
+    response_type: 'code',
+    user_id: 1
   };
 
   var authorizationURL = options.url +
